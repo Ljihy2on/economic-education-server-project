@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 const express = require('express');
 const swaggerJSDoc = require('swagger-jsdoc');
@@ -817,6 +818,12 @@ const router = express.Router();
  *         description: "서버 오류"
  */
 
+=======
+// routes/sample.js
+const express = require('express');
+const router = express.Router();
+
+>>>>>>> 154c251fe3cbee861f8151e74269701a1b7cf4bb
 router.get('/', (req, res) => {
   res.json({ message: '샘플 라우터 작동 완료!' });
 });
