@@ -1,4 +1,4 @@
-exports.register = async (req, res) => {
+const register = async (req, res) => {
     try {
         const { username, password } = req.body;
         // TODO: DB 저장 및 비밀번호 암호화 처리
@@ -8,7 +8,7 @@ exports.register = async (req, res) => {
     }
 };
 
-exports.login = async (req, res) => {
+const login = async (req, res) => {
     try {
         const { username, password } = req.body;
         // TODO: DB에서 사용자 조회 및 토큰 발급 처리
@@ -17,3 +17,5 @@ exports.login = async (req, res) => {
         res.status(401).json({ message: '로그인 실패' });
     }
 };
+
+module.exports = { register, login };

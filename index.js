@@ -10,7 +10,7 @@ const swaggerSpec = require('./swagger/swagger.js');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const authRouter = require('./routes/auth.route');
+const authRouter = require('./routes/auth.router');
 
 // 미들웨어
 app.use(cors());

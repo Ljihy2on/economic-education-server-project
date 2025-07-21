@@ -828,7 +828,7 @@ const options = {
             },
         ],
     },
-    apis: ['./routes/*.js'], // Swagger 주석이 있는 파일 경로
+    apis: ['./swagger/*.js'], // Swagger 주석이 있는 파일 경로
 };
 
 const swaggerSpec = swaggerJSDoc(options);
