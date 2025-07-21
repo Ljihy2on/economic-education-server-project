@@ -4,20 +4,19 @@ const express = require('express');
 const cors = require('cors');
 const mysql = require('mysql2');
 
-const sampleRouter = require('./routes/sample'); // sample 라우터 불러오기
-
 const swaggerUi = require('swagger-ui-express');
 const swaggerSpec = require('./swagger/swagger.js');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+const authRouter = require('./routes/auth.route');
+
 // 미들웨어
 app.use(cors());
 app.use(express.json());
 
-// sample 라우터 연결
-app.use('/sample', sampleRouter);
+app.use('/api', authRouter); // POST /api/register, /api/login
 
 // // MySQL 연결
 // const connection = mysql.createConnection({
