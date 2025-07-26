@@ -11,12 +11,18 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 const authRouter = require('./routes/auth.router');
+const investRouter = require('./routes/invest.router');
+const accountRouter = require('./routes/account.route');
+
 
 // 미들웨어
 app.use(cors());
 app.use(express.json());
 
 app.use('/api', authRouter); // POST /api/register, /api/login
+app.use('/api', investRouter);
+app.use('/api/account', accountRouter);
+
 
 // // MySQL 연결
 // const connection = mysql.createConnection({
